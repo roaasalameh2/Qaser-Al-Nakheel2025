@@ -12,7 +12,7 @@ export const createRestaurantReservation = (data) => {
 };
 
 export const getRestaurantById = () => {
-    return axiosInstance.get(`/restaurants/${"963627b6-63e5-498c-997d-6a1301efa2e3"}`)
+    return axiosInstance.get(`/restaurants/${"8d1c5390-7c81-4090-969e-4c196d2adaf1"}`)
 }
 //delete restuarant 
 export const deleteRestaurant = (id) => {

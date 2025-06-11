@@ -33,7 +33,6 @@ export default function RestaurantTable() {
     const fetchRestaurant = async () => {
         try {
             const res = await getAllRestaurants();
-            console.log(res.data)
             setRestaurant(res.data);
         } catch {
             toast.error(t("restaurant.failed"));
