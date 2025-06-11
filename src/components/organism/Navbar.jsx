@@ -89,25 +89,26 @@ function Navbar() {
 
               {openNav && (
                 <div
-                  className={`absolute ${
-                    i18n.language === "ar" ? "left-0" : "right-0"
-                  } mt-3 w-56 bg-white shadow-2xl rounded-xl border border-gray-100 z-50 overflow-hidden animate-fadeIn`}
+                  className={`absolute ${i18n.language === "ar" ? "left-0" : "right-0"
+                    } mt-3 w-56 bg-white shadow-2xl rounded-xl border border-gray-100 z-50 overflow-hidden animate-fadeIn`}
                 >
                   <ul className="flex flex-col py-2">
                     {id && (
                       <>
-                        <li>
-                          <Link
-                            to="/profile"
-                            onClick={() => setOpenNav(false)}
-                            className="flex items-center gap-2 px-4 py-3 text-sm text-gray-800 font-bold hover:bg-gray-50 transition-colors duration-200"
-                          >
-                            <IoMdPersonAdd className="text-lg text-my-color" />
-                            {i18n.language === "ar"
-                              ? "الصفحة الشخصية"
-                              : "Profile"}
-                          </Link>
-                        </li>
+                        {role === "user" && (
+                          <li>
+                            <Link
+                              to="/profile"
+                              onClick={() => setOpenNav(false)}
+                              className="flex items-center gap-2 px-4 py-3 text-sm text-gray-800 font-bold hover:bg-gray-50 transition-colors duration-200"
+                            >
+                              <IoMdPersonAdd className="text-lg text-my-color" />
+                              {i18n.language === "ar"
+                                ? "الصفحة الشخصية"
+                                : "Profile"}
+                            </Link>
+                          </li>
+                        )}
                         {role !== "user" && (
                           <li>
                             <Link
@@ -191,11 +192,10 @@ function Navbar() {
           </button>
         )}
         <div
-          className={`absolute bg-gray-200 right-2 left-2 rounded-md p-5 transition-all duration-300 border-2 border-black ${
-            openNav && !isHalfScreen
-              ? "top-24 opacity-100 z-50 "
-              : "-top-96 opacity-0 -z-50"
-          }`}
+          className={`absolute bg-gray-200 right-2 left-2 rounded-md p-5 transition-all duration-300 border-2 border-black ${openNav && !isHalfScreen
+            ? "top-24 opacity-100 z-50 "
+            : "-top-96 opacity-0 -z-50"
+            }`}
         >
           <div className="flex flex-col w-full justify-between">
             <ul className="flex flex-col flex-1 gap-4 justify-start items-start w-full">
@@ -238,9 +238,8 @@ function Navbar() {
                             <Link
                               to="/profile"
                               onClick={() => setOpenNav(false)}
-                              className={`${
-                                active ? "bg-gray-100" : ""
-                              } flex items-center gap-3 px-5 py-2 text-sm text-gray-800 font-bold transition`}
+                              className={`${active ? "bg-gray-100" : ""
+                                } flex items-center gap-3 px-5 py-2 text-sm text-gray-800 font-bold transition`}
                             >
                               <IoMdPersonAdd className="text-lg text-my-color" />
                               {i18n.language === "ar"
@@ -255,9 +254,8 @@ function Navbar() {
                               <Link
                                 to="/admin"
                                 onClick={() => setOpenNav(false)}
-                                className={`${
-                                  active ? "bg-gray-100" : ""
-                                } flex items-center gap-3 px-5 py-2 text-sm text-gray-800 font-bold transition`}
+                                className={`${active ? "bg-gray-100" : ""
+                                  } flex items-center gap-3 px-5 py-2 text-sm text-gray-800 font-bold transition`}
                               >
                                 <MdAdminPanelSettings className="text-xl text-my-color" />
                                 {i18n.language === "ar"
@@ -277,9 +275,8 @@ function Navbar() {
                             toggleLanguage();
                             setOpenNav(false);
                           }}
-                          className={`${
-                            active ? "bg-gray-100" : ""
-                          } w-full flex items-center gap-3 px-5 py-2 text-sm text-gray-800 font-bold text-left transition`}
+                          className={`${active ? "bg-gray-100" : ""
+                            } w-full flex items-center gap-3 px-5 py-2 text-sm text-gray-800 font-bold text-left transition`}
                         >
                           <IoLanguageSharp className="text-lg" />
                           {language === "en" ? "العربية" : "English"}
@@ -294,9 +291,8 @@ function Navbar() {
                             <Link
                               to="/signUp"
                               onClick={() => setOpenNav(false)}
-                              className={`${
-                                active ? "bg-gray-100" : ""
-                              } flex items-center gap-3 px-5 py-2 text-sm text-gray-800 font-bold transition`}
+                              className={`${active ? "bg-gray-100" : ""
+                                } flex items-center gap-3 px-5 py-2 text-sm text-gray-800 font-bold transition`}
                             >
                               <IoMdPersonAdd className="text-lg text-my-color" />
                               {i18n.language === "ar"
@@ -311,9 +307,8 @@ function Navbar() {
                             <Link
                               to="/logIn"
                               onClick={() => setOpenNav(false)}
-                              className={`${
-                                active ? "bg-gray-100" : ""
-                              } flex items-center gap-3 px-5 py-2 text-sm text-gray-800 font-bold transition`}
+                              className={`${active ? "bg-gray-100" : ""
+                                } flex items-center gap-3 px-5 py-2 text-sm text-gray-800 font-bold transition`}
                             >
                               <IoLogIn className="text-lg text-my-color" />
                               {i18n.language === "ar"
@@ -331,9 +326,8 @@ function Navbar() {
                               handleLogOut();
                               setOpenNav(false);
                             }}
-                            className={`${
-                              active ? "bg-red-50" : ""
-                            } w-full flex items-center gap-3 px-5 py-2 text-sm font-bold text-red-600 text-left transition`}
+                            className={`${active ? "bg-red-50" : ""
+                              } w-full flex items-center gap-3 px-5 py-2 text-sm font-bold text-red-600 text-left transition`}
                           >
                             <IoLogOut className="text-lg" />
                             {i18n.language === "ar" ? "تسجيل خروج" : "Log out"}
