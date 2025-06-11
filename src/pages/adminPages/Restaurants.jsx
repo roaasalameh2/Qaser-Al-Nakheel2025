@@ -33,6 +33,7 @@ export default function RestaurantTable() {
     const fetchRestaurant = async () => {
         try {
             const res = await getAllRestaurants();
+            console.log(res.data)
             setRestaurant(res.data);
         } catch {
             toast.error(t("restaurant.failed"));
@@ -108,16 +109,16 @@ export default function RestaurantTable() {
                                     </button>
                                 </div>
                                 <p className="text-white  mb-1 text-lg">
-                                     <strong >{restaurant.name[i18next.language || "en"]}</strong>
+                                    <strong >{restaurant.name[i18next.language || "en"]}</strong>
                                 </p>
                                 <p className="text-white text-lg mb-1">
-                                     <strong>{t("restaurant.hours")}:</strong> {restaurant.Opening_hours}
+                                    <strong>{t("restaurant.hours")}:</strong> {restaurant.Opening_hours}
                                 </p>
                                 <p className="text-white text-lg mb-1">
                                     <strong>{t("restaurant.cuisine")}:</strong> {restaurant.Cuisine_type?.[i18next.language || "en"]}
                                 </p>
                                 <p className="text-white text-lg mb-2">
-                                     <strong>{t("restaurant.rating")}:</strong> {restaurant.averageRating}
+                                    <strong>{t("restaurant.rating")}:</strong> {restaurant.averageRating}
                                 </p>
                                 <div className="mt-4">
                                     <button
