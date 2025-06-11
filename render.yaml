@@ -1,0 +1,14 @@
+services:
+  - type: web
+    name: react-client
+    rootDir: client
+    buildCommand: npm run build
+    staticPublishPath: dist
+    headers:
+      - source: /**
+        headers:
+          - key: "Cache-Control"
+            value: "no-cache"
+    routes:
+      - source: "/**"
+        destination: "/index.html"
