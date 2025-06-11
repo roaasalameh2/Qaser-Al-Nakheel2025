@@ -142,13 +142,13 @@ export default function LoginForm() {
 
         <div className="flex justify-center gap-4 mt-2">
           <a
-            href="https://qasr-alnakheel.onrender.com/auth/facebook/callback"
+            href="https://qasr-alnakheel-qmeb.onrender.com/auth/facebook/callback"
             className="bg-blue-600 py-2 px-4 rounded w-1/2 hover:bg-blue-800 flex justify-center"
           >
             <img src={imageLogo} alt="Facebook" className="w-6 h-6" />
           </a>
           <a
-            href="https://qasr-alnakheel.onrender.com/auth/google/callback"
+            href="https://qasr-alnakheel-qmeb.onrender.com/auth/google/callback"
             className="bg-red-600 py-2 px-4 rounded w-1/2 hover:bg-red-800 flex justify-center"
           >
             <img src={imageIcon} alt="Google" className="w-6 h-6" />
