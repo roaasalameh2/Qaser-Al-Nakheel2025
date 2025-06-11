@@ -4,8 +4,7 @@ import { toast } from "react-toastify";
 
 
 const axiosInstance = axios.create({
-  baseURL: 'https://qasr-alnakheel.onrender.com/api',
-  //baseURL: 'http://localhost:3000/api',
+  baseURL: import.meta.env.BACKEND_URL,
   withCredentials: true,
 });
 
